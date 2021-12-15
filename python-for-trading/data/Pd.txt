@@ -1,0 +1,29 @@
+import pandas as pd
+
+
+def get_max_close(symbol):
+    """
+    returns company stock max close 
+    """
+    df = pd.read_csv(f"data/{symbol}.csv")
+    return df["Close"].max()
+
+def main():
+    print("Max close:")
+    for symbol in ["AAPL","FB"]:
+        print(symbol + ":", get_max_close(symbol))
+
+if __name__=="__main__":
+    main()
+
+def get_min_close(symbol):
+    df = pd.read_csv(f"data/{symbol}.csv")
+    return df["Close"].min()
+
+def main():
+    print("Min close:")
+    for symbol in ["AAPL","FB"]:
+        print(symbol + ":", get_min_close(symbol))
+
+if __name__=="__main__":
+    main()
